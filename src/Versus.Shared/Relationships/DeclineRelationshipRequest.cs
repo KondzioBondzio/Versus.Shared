@@ -1,6 +1,6 @@
 ﻿namespace Versus.Shared.Relationships;
 
-public record UnblockRequest
+public record DeclineRelationshipRequest
 {
     public required Guid Id { get; init; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Versus.Shared.Relationships;
 
-public record RelationshipResponse
+public record GetRelationshipsResponse
 {
     public required Guid Id { get; set; }
     public required Guid UserId { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Versus.Shared.Relationships;
 
-public record BlockRequest
+public record RemoveFriendRelationshipRequest
 {
     public required Guid Id { get; init; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Versus.Shared.Relationships;
 
-public record UnfriendRequest
+public record AcceptRelationshipRequest
 {
     public required Guid Id { get; init; }
 }

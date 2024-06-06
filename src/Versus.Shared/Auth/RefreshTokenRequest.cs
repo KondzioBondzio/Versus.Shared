@@ -2,5 +2,5 @@
 
 public class RefreshTokenRequest
 {
-    public required string Token { get; set; } = string.Empty;
+    public required string Token { get; init; } = string.Empty;
 }
