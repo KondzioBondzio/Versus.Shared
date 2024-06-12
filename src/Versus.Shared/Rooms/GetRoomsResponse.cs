@@ -1,6 +1,6 @@
 ﻿namespace Versus.Shared.Rooms;
 
-public class GetRoomsResponse
+public record GetRoomsResponse
 {
     public Guid Id { get; init; }
     public string Name { get; init; } = null!;
