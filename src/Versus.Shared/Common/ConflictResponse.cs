@@ -1,9 +1,16 @@
 ﻿using System.Collections;
+using System.Text.Json.Serialization;
 
 namespace Versus.Shared.Common;
 
 public record ConflictResponse
 {
+    [JsonConstructor]
+    protected ConflictResponse()
+    {
+        
+    }
+    
     public ConflictResponse(string details)
     {
         Details = details;
@@ -15,12 +22,29 @@ public record ConflictResponse
         Errors = errors;
     }
 
-    public string Details { get; init; }
+    public string Details { get; init; } = null!;
     public IEnumerable<ConflictDetail> Errors { get; init; } = [];
 }
 
-public record ConflictDetail(string ResourceType, string ResourceIds, string Description)
+public record ConflictDetail
 {
+    [JsonConstructor]
+    public ConflictDetail()
+    {
+        
+    }
+
+    public ConflictDetail(string resourceType, string resourceIds, string description)
+    {
+        ResourceType = resourceType;
+        ResourceIds = resourceIds;
+        Description = description;
+    }
+
+    public string ResourceType { get; init; } = null!;
+    public string ResourceIds { get; init; } = null!;
+    public string Description { get; init; } = null!;
+
     public static ConflictDetail FromResource<TResourceType, TResourceId>(TResourceId resourceId, string description)
         where TResourceType : class
     {
