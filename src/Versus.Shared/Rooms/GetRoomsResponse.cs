@@ -5,6 +5,7 @@ public record GetRoomsResponse
     public Guid Id { get; init; }
     public string Name { get; init; } = null!;
     public bool PasswordProtected { get; init; }
+    public DateTime PlayDate { get; init; }
 
     public Guid CategoryId { get; init; }
     public byte[]? CategoryImage { get; init; }
@@ -14,6 +15,7 @@ public record GetRoomsResponse
     public byte[]? OwnerImage { get; init; }
     public string OwnerName { get; init; } = null!;
 
+    public int TeamCount { get; init; }
     public int OccupiedSlots { get; init; }
     public int TotalSpots { get; init; }
 }
